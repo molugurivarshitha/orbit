@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Startup Name</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 1.5em;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+    }
+
+    input[type="email"] {
+      padding: 0.75em 1em;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      width: 250px;
+    }
+
+    button {
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      padding: 0.75em 1.5em;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff4b3e;
+    }
+
+    .thank-you {
+      display: none;
+      font-size: 1.2rem;
+      margin-top: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Coming Soon: Orbit</h1>
+  <p>We're building something exciting that will change the way you [solve pain point / do something valuable]. Be the first to know when we launch.</p>
+
+  <form id="signup-form">
+    <input type="email" id="email" placeholder="Your email address" required />
+    <button type="submit">Notify Me</button>
+    <div class="thank-you" id="thank-you">Thanks! We’ll keep you posted. 🚀</div>
+  </form>
+
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Here you can add real submission logic like fetch() to an API or service
+      document.getElementById('thank-you').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('thank-you').style.display = 'none';
+        document.getElementById('email').value = '';
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
